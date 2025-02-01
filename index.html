@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joguinhos Marotos 5</title>
+    <link rel="shortcut icon" href="oculoslegais.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: aqua;
+            text-align: center;
+            color: white;
+        }
+        hr {
+            width: 75%;
+            height: 5px;
+            border: none;
+            border-radius: 20px;
+            background-color: rgb(127, 206, 255);
+        }
+        .heading:hover , .titles:hover {
+            transform: scale(1.05);
+        }
+        .heading , .heading2 , .enjoy , .titles {
+            z-index: 2;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 48px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .heading2 {
+            font-size: x-large;
+            cursor: default;
+        }
+        .enjoy {
+            position: relative;
+            top: 25%;
+        }
+        .titles {
+            background-color: rgba(193, 231, 255, 0.407);
+            width: fit-content;
+            border-radius: 20px;
+            margin-left: 38%;
+        }
+        .title {
+            background-color: rgb(127, 206, 255);
+            padding: 5px;
+            border-radius: 20px;
+            cursor: default;
+        }
+        @keyframes scale {
+            from {scale: 1.25;}
+            to {scale: 1;}
+        }
+        .heading , .enjoy {
+            animation-name: scale;
+            animation-delay: 0.25s;
+            animation-duration: 3s;
+            animation-fill-mode: forwardss;
+        }
+        .container , .container1 {
+            background-color: rgb(127, 206, 255);
+            display: flex;
+            flex-direction: column;
+            border-radius: 20px;
+            padding-bottom: 30px;
+            cursor: default;
+        }
+        .container1 {
+            display: flex;
+            flex-direction: row;
+            padding-top: 30px;
+            gap: 10px;
+        }
+        .item {
+            color: white;
+        }
+        .links:hover {
+            transform: scale(1.1);
+        }
+        .links3:hover {
+            transform: scale(1.025);
+        }
+        .links , .links2 , .links3 {
+            z-index: 2;
+            transition: transform 0.3s;
+            display: flex;
+            position: relative;
+            left: 10%;
+            font-size: 18px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            text-align: center;
+        }
+        @keyframes slide {
+            from {opacity: 0; transform: translateX(-50px);}
+            to {opacity: 1; transform: translateX(0px);}
+        }
+        .links , .heading2 {
+            animation-name: slide;
+            animation-duration: 2.5s;
+        }
+        .links2 {
+            display: inline;
+            left: auto;
+            font-size: larger;
+            color: rgb(80, 80, 255);
+        }
+        .links3 {
+            display: block;
+            position: relative;
+            left: 0px;
+            background-color: rgb(127, 170, 255);
+            padding: 10px;
+            border-radius: 20px;
+        }
+        .games , .games1 , .summary , .summary2 {
+            padding-top: 15px;
+            background-color: rgb(120, 156, 232);
+            border-radius: 20px;
+            width: 350px;
+            position: relative;
+            left: 25px;
+            height: 815px;
+        }
+        .summary , .summary2 {
+            width: 700px;
+            height: 350px;
+        }
+        .games1 {
+            width: fit-content;
+            height: 675px;
+            margin-left: 25%;
+        }
+        .buttonsDisplay {
+            background-color: rgb(120, 156, 232);
+            border-radius: 20px;
+            height: 200px;
+            width: 1400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 2%;
+            margin-bottom: 3%;
+        }
+        .img:hover , .img2:hover , .img3:hover , .img4:hover {
+            transform: scale(1.1);
+        }
+        .img , .img2 , .img3 , .img4 {
+            position: relative;
+            background-color: rgb(120, 156, 232);
+            padding: 10px;
+            border-radius: 100%;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .img {
+            top: 900px;
+            left: 5px;
+        }
+        .img2 {
+            top: 500px;
+            left: 5px;
+        }
+        .img3 {
+            top: 250px;
+            left: 5px;
+        }
+        .img4 {
+            top: 750px;
+            left: 5px;
+        }
+        iframe {
+            z-index: 1;
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+        }
+        iframe:hover {
+            transform: scale(1.1);
+        }
+        .megaGames:hover {
+            transform: scale(1.025);
+        }
+        .megaGames {
+            border-radius: 20px;
+            position: relative;
+            left: 50px;
+            border: dotted 2px white;
+        }
+        .megaGamesContent , .audioContent , .stuff , .privacyPolicy {
+            margin: 20px;
+            padding: 20px;
+            padding-bottom: 50px;
+            background-color: rgb(120, 156, 232);
+            border-radius: 20px;
+        }
+        .stuff {
+            border: dashed 2px white; 
+        }
+        .privacyPolicy {
+            border: dashed 2px white;
+        }
+        audio {
+            transition: transform 0.6s;
+            background-color: rgb(163, 192, 255);
+            padding: 9px;
+            border-radius: 50px;
+        }
+        audio:hover {
+            transform: scale(1.1);
+        }
+        .collection {
+            display: grid;
+            grid-template-columns: repeat(1, 2fr);
+            text-align: left;
+            background-color: rgba(193, 231, 255, 0.219);
+            padding: 25px;
+            margin: 10px;
+            border-radius: 20px;
+            border: dashed 2px white;
+        }
+    </style>
+</head>
+<body>
+ <div class="title">
+ <h1 class="heading">Joguinhos Marotos 5</h1>
+ <h2 class="heading2">Venha Se Divertir!</h2> 
+ <h2 class="heading2">Todos os Direitos Autorais Reservados &#169;</h2>
+ <h2 class="heading2">Por Pedro (Não Recomendado Para Smartphones)</h2>
+ </div> <br> <hr> <br>
+ <div class="container1"> <br>
+ <div class="summary">
+   <h1 class="heading">Sumário:</h1>
+   <h1 class="heading2">1. Estação Links</h1>
+   <h1 class="heading2">2. Estação Botões</h1>
+   <h1 class="heading2">3. Estação Jogos</h1>
+   <h1 class="heading2">4. Estação Relax (Música e Links Esquisitos)</h1>
+   <h1 class="heading2">5. Sobre e Informações Legais</h1>
+   </div>
+ <div class="summary2">
+    <h1 class="enjoy">Aproveite e se Divirta!</h1>
+ </div>
+ </div> <br> <hr> <br>
+ <div class="container">
+  <div class="item">
+    <div class="icons">
+    <img class="img" src="oculoslegais.ico" width="50" height="50">
+    <img class="img2" src="android192x192.png" width="50" height="50">
+    <img class="img3" src="android-chrome-192x192.png" width="50" height="50">
+    <img class="img4" src="money-192x192.png" width="50" height="50">
+    </div>
+    <h1 class="titles">Estação Links</h1>
+    <div class="games"> <br>
+    <a href="https://itch.io/games" target="_blank" <p class="links">Acessar Itch.Io Games</p>
+        <a href="https://www.jogos360.com.br/pico_park.html" target="_blank" <p class="links">Acessar Pico Park</p>
+        <a href="https://www.jogos360.com.br/master_checkers.html" target="_blank" <p class="links">Acessar Damas</p>
+        <a href="https://www.jogos360.com.br/jogo_da_velha.html" target="_blank" <p class="links">Acessar Jogo da Velha</p>
+        <a href="https://www.jogos360.com.br/pac_man.html" target="_blank" <p class="links">Acessar Pacman</p>
+        <a href="https://www.jogos360.com.br/fruit_cut_ninja.html" target="_blank" <p class="links">Acessar Fruit Ninja</p>
+        <a href="https://www.jogos360.com.br/flappy_bird.html"target="_blank" <p class="links">Acessar Flappy Bird</p>
+        <a href="https://www.jogos360.com.br/asteroids.html" target="_blank" <p href="https://www.jogos360.com.br/asteroids.html" <p class="links">Acessar Asteroids</p>
+        <a href="https://www.jogos360.com.br/snail_bob.html" target="_blank" <p class="links">Acessar Snail Bob</p>
+        <a href="https://www.crazygames.com.br/jogos/stick-epic-fighter" target="_blank" <p class="links">Acessar Stickman Epic Figher</p>
+        <a href="https://www.crazygames.com.br/jogos/space-waves" target="_blank" <p class="links">Acessar Space Waves</p>
+        <a href="https://www.crazygames.com.br/jogos/worldguessr" target="_blank" <p class="links">Acessar World Guesser</p>
+        <a href="https://www.crazygames.com.br/jogos/square-bird" target="_blank" <p class="links">Acessar Galinha Quadrada</p>
+        <a href="https://www.crazygames.com.br/jogos/capybara-clicker" target="_blank" <p class="links">Acessar Capivara Clicker</p>
+        <a href="https://www.crazygames.com.br/jogos/slice-master" target="_blank" <p class="links">Acessar Slice Master</p>
+        <a href="https://www.crazygames.com.br/jogos/drift-boss" target="_blank" <p class="links">Acessar Rei do Drift</p>
+        <a href="https://www.crazygames.com.br/jogos/doodle-road" target="_blank" <p class="links">Acessar Doodle Road</p>
+        <a href="https://www.crazygames.com.br/jogos/merge-construct" target="_blank" <p class="links">Acessar Merge & Construct</p>
+        <a href="https://geometrygame.org/" target="_blank" <p class="links">Acessar Geometry Dash</p>
+        <a href="https://classic.minecraft.net" target="_blank" <p class="links">Acessar Minecraft Classic</p>
+        <a href="https://totallyscience.co/" target="_blank" <p class="links">Acessar Totally Science</p>
+        <a href="https://smashkartsonline.github.io/" target="_blank" <p class="links">Acessar Smash Karts</p></a>
+    </div> <h1 class="titles">Estação Botões</h1> <br> <div class="buttonsDisplay">
+        <h1 class="heading">Clique nos Botões e veja o barulho que eles fazem!</h1>
+       </div> <div class="games1">
+        <h1 class="heading2">Jogo dos Botões!</h1> <br>
+        <iframe width="110" height="200" src="https://www.myinstants.com/instant/pou-estourado-48183/embed/" frameborder="0" scrolling="no"></iframe>
+        <iframe width="110" height="200" src="https://www.myinstants.com/instant/mc-teteu-dingo-bell-92655/embed/" frameborder="0" scrolling="no"></iframe>
+        <iframe width="110" height="200" src="https://www.myinstants.com/instant/rojao-super-estourado-44057/embed/" frameborder="0" scrolling="no"></iframe>
+        <iframe width="110" height="200" src="https://www.myinstants.com/instant/vine-boom-sound-70972/embed/" frameborder="0" scrolling="no"></iframe>
+        <iframe width="110" height="200" src="https://www.myinstants.com/instant/sad-violin-the-meme-one/embed/" frameborder="0" scrolling="no"></iframe>
+        <iframe width="110" height="200" src="https://www.myinstants.com/instant/spongebob-fail-11236/embed/" frameborder="0" scrolling="no"></iframe> <br>
+        <iframe width="110" height="200" src="https://www.myinstants.com/instant/spiderman-meme-song-37638/embed/" frameborder="0" scrolling="no"></iframe>
+        <iframe width="110" height="200" src="https://www.myinstants.com/instant/fart/embed/" frameborder="0" scrolling="no"></iframe>
+        <iframe width="110" height="200" src="https://www.myinstants.com/instant/bruh/embed/" frameborder="0" scrolling="no"></iframe>
+        <iframe width="110" height="200" src="https://www.myinstants.com/instant/metal-pipe-clang-80894/embed/" frameborder="0" scrolling="no"></iframe>
+        <iframe width="110" height="200" src="https://www.myinstants.com/instant/taco-bell-bong-42481/embed/" frameborder="0" scrolling="no"></iframe>
+        <iframe width="110" height="200" src="https://www.myinstants.com/instant/baby-laughing-meme-56428/embed/" frameborder="0" scrolling="no"></iframe> <br>
+        <iframe width="110" height="200" src="https://www.myinstants.com/instant/meme-final-91448/embed/" frameborder="0" scrolling="no"></iframe>
+        <iframe width="110" height="200" src="https://www.myinstants.com/instant/parou-round-6-1-82500/embed/" frameborder="0" scrolling="no"></iframe>
+        <iframe width="110" height="200" src="https://www.myinstants.com/instant/outro-song-77850/embed/" frameborder="0" scrolling="no"></iframe>
+        <iframe width="110" height="200" src="https://www.myinstants.com/instant/goofy-ahh-sounds-96639/embed/" frameborder="0" scrolling="no"></iframe>
+        <iframe width="110" height="200" src="https://www.myinstants.com/instant/plankton-augh-12944/embed/" frameborder="0" scrolling="no"></iframe>
+        <iframe width="110" height="200" src="https://www.myinstants.com/instant/uicideboy-intro-gmi2-36329/embed/" frameborder="0" scrolling="no"></iframe>
+    </div>
+  </div> <br> <h1 class="titles">Estação Jogos</h1>
+  <div class="megaGamesContent">
+  <h1 class="heading">Jogos Importados!</h1>
+  <h1 class="heading2">Para usar tela cheia, Experimente os links!</h1> <br>
+  <h1 class="heading2">Jogos Retirados de: <a class="links2" target="_blank" href="https://www.crazygames.com.br/">Crazy Games</a>, <a class="links2" target="_blank" href="https://www.jogos360.com.br">Jogos 360</a> e <a class="links2" target="_blank" href="https://global.julianseditor.com/app/?p=eyJtb2RlIjoiMyIsImdhbWVJZCI6IiIsInJvb21JZCI6IiIsInJvbGVJZCI6IjAifQ==">Julians Editor</a></h1>
+  <iframe class="megaGames" src="https://www.crazygames.com.br/embed/smash-karts" style="width: 1100px; height: 500px;" frameborder="0" allow="gamepad *;"></iframe> <br>
+  <iframe class="megaGames" src="https://www.crazygames.com.br/embed/basket-battle-zmg" style="width: 1100px; height: 500px;" frameborder="0" allow="gamepad *;"></iframe> <br>
+  <iframe class="megaGames" src="https://www.crazygames.com.br/embed/supermarket-simulator-cashier-game" style="width: 1100px; height: 500px;" frameborder="0" allow="gamepad *;"></iframe> <br>
+  <iframe class="megaGames" src="https://www.crazygames.com.br/embed/solar-smash" style="width: 1100px; height: 500px;" frameborder="0" allow="gamepad *;"></iframe> <br>
+  <iframe class="megaGames" src="https://www.crazygames.com.br/embed/xtreme-drift-racing" style="width: 1100px; height: 500px;" frameborder="0" allow="gamepad *;"></iframe> <br>
+  <iframe class="megaGames" src="https://www.crazygames.com.br/embed/bloxdhop-io" style="width: 1100px; height: 500px;" frameborder="0" allow="gamepad *;"></iframe> <br>
+  <iframe class="megaGames" src="https://www.crazygames.com.br/embed/capybara-clicker-2" style="width: 1100px; height: 500px;" frameborder="0" allow="gamepad *;"></iframe> <br>
+  <iframe class="megaGames" src="https://www.jogos360.com.br/zombie_tsunami_online.html" style="width: 1100px;" height="500px;" frameborder="0" allow="gamepad *;"></iframe> <br>
+  <iframe class="megaGames" src="https://global.julianseditor.com/app/?p=eyJtb2RlIjoiMyIsImdhbWVJZCI6IiIsInJvb21JZCI6IiIsInJvbGVJZCI6IjAifQ==" style="width: 1100px; height: 500px;" frameborder="0" allow="gamepad *;"></iframe> <br>
+  <iframe class="megaGames" src="https://www.crazygames.com.br/embed/ragdoll-archers" style="width: 1100px; height: 500px;" frameborder="0" allow="gamepad *;"></iframe>
+  </div> <h1 class="titles">Estação Relax</h1>
+  <div class="audioContent">
+    <h1 class="heading">Biblioteca de Músicas</h1>
+    <div class="collection">
+    <h1 class="heading2">Sweden - Minecraft</h1>
+    <audio autoplay="autoplay" controls="controls">
+           <source src="1-18. Sweden.mp3" type="audio/mp3" />
+    </audio> <br>
+    <h1 class="heading2">Key - Minecraft</h1>
+    <audio autoplay="autoplay" controls="controls">
+           <source src="1-01. Key.mp3" type="audio/mp3" />
+    </audio> <br>
+    <h1 class="heading2">Mice On Venus - Minecraft</h1>
+    <audio autoplay="autoplay" controls="controls">
+           <source src="1-11. Mice on Venus.mp3" type="audio/mp3" />
+    </audio> <br>
+    <h1 class="heading2">Aria Math - Minecraft</h1>
+    <audio autoplay="autoplay" controls="controls">
+           <source src="2-13. Aria Math.mp3" type="audio/mp3" />
+    </audio> <br>
+    <h1 class="heading2">Shopping - Minecraft</h1>
+    <audio autoplay="autoplay" controls="controls">
+           <source src="2-27. Mall.mp3" type="audio/mp3" />
+    </audio> <br>
+    <h1 class="heading2">Esperar - Minecraft</h1>
+    <audio autoplay="autoplay" controls="controls">
+           <source src="2-21. Wait.mp3" type="audio/mp3" />
+    </audio> <br>
+    <h1 class="heading2">Now That This Old World Is Ending - FarCry5</h1>
+    <audio autoplay="autoplay" controls="controls">
+           <source src="01 - Now That This Old World Is Ending.mp3" type="audio/mp3" />
+    </audio> <br>
+    <h1 class="heading2">Keep Your Rifle By Your Side - FarCry5</h1>
+    <audio autoplay="autoplay" controls="controls">
+           <source src="07. Keep Your Rifle by Your Side.mp3" type="audio/mp3" />
+    </audio> <br>
+    <h1 class="heading2">Oh John (Reinterpretation) - FarCry5</h1>
+    <audio autoplay="autoplay" controls="controls">
+           <source src="02. Oh John (Reinterpretation).mp3" type="audio/mp3" />
+    </audio> <br>
+    <h1 class="heading2">Step Into Garden - FarCry5</h1>
+    <audio autoplay="autoplay" controls="controls">
+           <source src="09 - Step into the Garden.mp3" type="audio/mp3" />
+    </audio> <br>
+    <h1 class="heading2">Músicas Retiradas de: <a class="links2" target="_blank" href="https://downloads.khinsider.com/game-soundtracks/album/minecraft">Game Soundtracks</a></h1>
+   </div>
+  </div>
+  <div class="stuff">
+    <h1 class="heading">Entretenimento e Utilitários</h1>
+    <h1 class="heading2">Entretenimento Extra</h1> <br>
+    <a class="links3" target="_blank" href="https://youtube.com.br">Acessar Youtube</a> <br>
+    <a class="links3" target="_blank" href="https://www.myinstants.com">Acessar MyInstants</a> <br>
+    <h1 class="heading2">Links Esquisitos</h1>
+    <h1 class="heading2">Atenção! Estes links podem estar em outro idioma. Não nos responsabilizamos caso houver luzes interminentes, barulhos altos ou imagens impróprias.</h1> <br>
+    <a class="links3" target="_blank" href="http://endless.horse/">Acessar Endless Horse</a> <br>
+    <a class="links3" target="_blank" href="https://www.fallingfalling.com/">Acessar Caindo e Caindo...</a> <br>
+    <a class="links3" target="_blank" href="https://papertoilet.com/">Acessar Papel Higienico</a> <br>
+    <a class="links3" target="_blank" href="https://zoomquilt.org/">Acessar Zoom Infinito</a> <br>
+    <a class="links3" target="_blank" href="https://theuselessweb.com/">Acessar Leve-me a outro site</a> <br>
+    <a class="links3" target="_blank" href="https://pointerpointer.com/">Acessar Pointer Pointer</a> <br>
+    <a class="links3" target="_blank" href="http://www.staggeringbeauty.com/">Acessar Boneco de Posto (NÃO BALANÇE DEMAIS O CURSOR!)</a> <br>
+    <a class="links3" target="_blank" href="https://puginarug.com/">Clique para Honrar o Pug</a> <br>
+    <a class="links3" target="_blank" href="https://hackertyper.net/">Brincar de ser Hacker</a> <br>
+  </div>
+  <div class="privacyPolicy">
+   <h1 class="heading">Sobre</h1> <br>
+   <h1 class="heading2">Bem-vindo ao Joguinhos Marotos 5, o site mais divertido e criativo para você se divertir com os melhores jogos online! Lançado em 2025, o Joguinhos Marotos 5 é a última versão da nossa plataforma, e acredite, ela chegou para proporcionar uma experiência única para todos os fãs de diversão e entretenimento.</h1> <br>
+   <h1 class="heading2">Aqui, você encontrará uma seleção incrível de jogos, o Joguinhos Marotos 5 é feito para garantir que você tenha horas de diversão sem parar. E o melhor de tudo: nosso site é simples de usar, rápido e totalmente livre de preocupações, sem precisar de cadastro ou qualquer complicação.</h1> <br>
+   <h1 class="heading2">Ao contrário do que muitos podem esperar, o Joguinhos Marotos 5 não terá versões futuras como o "Joguinhos Marotos 6" ou "Joguinhos Marotos 7". Com isso, garantimos que esta plataforma seja a última e mais completa versão, focada em sempre oferecer o melhor conteúdo e experiências para os nossos usuários, sem mudanças abruptas ou confusão sobre atualizações constantes.</h1> <br>
+   <h1 class="heading2">Criado com base na simplicidade, no prazer de jogar e em uma navegação sem complicações, o Joguinhos Marotos 5 é a plataforma ideal para quem busca uma experiência de jogo descontraída e sem enrolação. Prepare-se para explorar uma infinidade de jogos, sempre com a garantia de diversão em primeiro lugar! Divirta-se e aproveite o melhor da internet com o Joguinhos Marotos 5 – onde a diversão nunca acaba!</h1> <br>
+   <h1 class="heading">Política de Privacidade</h1> <br>
+   <h1 class="heading2">Na plataforma Joguinhos Marotos 5, a sua privacidade é nossa prioridade. Esta Política de Privacidade descreve como lidamos com suas informações ao utilizar nosso site. Queremos garantir que sua experiência seja divertida, segura e sem preocupações.
+ Coleta de Informações: Nós não coletamos nenhuma informação pessoal ao acessar o site. O acesso ao Joguinhos Marotos 5 é totalmente livre de registro e não há necessidade de fornecer dados pessoais para jogar. Não armazenamos ou processamos qualquer dado que identifique diretamente a você.</h1> <br>
+   <h1 class="heading2">Utilização de Cookies: Nosso site não utiliza cookies. Não fazemos uso de cookies ou qualquer outra tecnologia para rastrear ou armazenar informações sobre sua navegação ou atividade online. Acesso livre e sem compromisso. Você pode acessar Joguinhos Marotos 5 livremente, sem a necessidade de criar uma conta ou fornecer dados pessoais. Todos os jogos e conteúdos estão disponíveis sem a coleta de informações.</h1> <br>
+   <h1 class="heading">Direitos Autorais e Termos de Uso &#169;</h1>
+   <h1 class="heading2">Todos os conteúdos, jogos, gráficos, textos e elementos disponíveis no site Joguinhos Marotos 5 são protegidos por direitos autorais e demais legislações de propriedade intelectual. Todos os direitos reservados. Nenhuma parte do conteúdo deste site pode ser reproduzida, distribuída, modificada ou explorada de qualquer forma, sem a autorização expressa do proprietário do site.</h1> <br>
+   <h1 class="heading2">O Joguinhos Marotos 5 oferece acesso a jogos e conteúdos de terceiros, como os sites Crazy Games, Julians Editor, MyInstants, Game Soundtracks, Poki, Totally Science e Jogos 360. Ao utilizar nosso site, você concorda que o acesso aos jogos e conteúdos disponibilizados pode ser regido pelos termos e condições e políticas de privacidade destes terceiros. A responsabilidade pelo conteúdo, disponibilidade e funcionamento dos jogos é dos respectivos fornecedores. Não temos quaisquer intenção de copiá-los ou infrigir qualquer termo de utilização destes terceiros.</h1> <br>
+   <h1 class="heading2">Embora o Joguinhos Marotos 5 ofereça uma plataforma que disponibiliza links e jogos desses sites parceiros, não nos responsabilizamos por eventuais problemas técnicos ou conteúdos impróprios.</h1> <br>
+   <h1 class="heading">Informações Extras</h1> <br>
+   <h1 class="heading2">Versão Atual: 1.55</h1> <br>
+   <h1 class="heading2">Última alteração: 1 de Fevereiro de 2025.</h1>
+ </div>
+</body>
+</html>
